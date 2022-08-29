@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+          *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        body{
+            font-size: 14px;
+            font-family: 'Montserrat',sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(241, 241, 241);
+            min-height: calc(100vh - 0.1px);
+            margin: 0 1.5rem;
+        }
+        .container article:first-child img{
+            border-radius: 1rem  0 0 1rem;
+        }
+        .container article:last-child{
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 0 1rem   1rem 0  ;
+            margin-top: -1rem;
+        }
+        img{
+            width: 400px;
+            margin-bottom: 1rem;
+            
+        }
+        .container{
+          
+            max-width: 900px;
+         
+          display: flex;
+          align-items: center;
+        }
+        h2{
+            color: hsl(221,21%,14%);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            text-transform:capitalize;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        p{
+          font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            color:hsl(228,12%,48%) ;
+        }
+        .content{
+          display: flex;
+          align-items: center;
+        }
+        .content img{
+          width: 3rem;
+          border-radius: 50%;
+          margin-right: 1rem;
+        }
+        .content .name{
+          margin-right: 10rem;
+        }
+        .content .name h4{
+          font-size: 1rem;
+          padding-bottom: 0;
+          font-weight: 700;
+          color:hsl(221,21%,14%);
+        }
+        .content .name span{
+          color: #777;
+          text-transform: capitalize;
+        }
+        .content .icon img{
+          background-color: #eee;
+          padding: .5rem;
+          width: 2rem;
+          position: relative;
+        }
+        /* .icon{
+          position: relative;
+        } */
+        .icons{
+          display: flex;
+          align-items: center;
+          /* flex-wrap: wrap; */
+          position: absolute;
+          background-color: #36383c;
+          border-radius: .5rem;
+          padding: 0 1.5rem;
+          top: 21rem;
+          left: 76%;
+          transform: translateX(-50%);
+          opacity: 0;
+          
+        }
+        .icons.active{
+          opacity: 1;
+        }
+        .icons::before{
+          position: absolute;
+          margin-left: 5rem;
+          bottom: -9px;
+          content: "";
+          height: 18px;
+          width: 18px;
+          background-color: #36383c;
+          transform: rotate(45deg);
+          
+        }
+        .icons img{
+          width: 1.5rem;
+          margin-top: 1rem;
+        }
+        .icons .p{
+          text-transform: uppercase;
+          color: #ccc;
+          letter-spacing: .1rem; 
+          margin-right: 1rem;
+        }
+        
+
+        @media (max-width:1240px){
+          .icons{
+          display: flex;
+          align-items: center;
+          /* flex-wrap: wrap; */
+          position: absolute;
+          background-color: #36383c;
+          border-radius: .5rem;
+          padding: 0 1.5rem;
+          top: 13rem;
+          left: 80%;
+          transform: translateX(-50%);
+          
+        }
+        @media (max-width:1100px){
+          .icons{
+            top: 13rem;
+          left: 87%;
+          }
+          
+        }
+        }
+        @media (max-width:991px){
+          .container{
+            display: grid;
+            max-width: 400px;
+            position: relative;
+          }
+          .container article:first-child img{
+            border-radius: 1rem  1rem 0  0 ;
+        }
+        .container article:last-child{
+          border-radius:   0  0 1rem 1rem ;
+        }
+        .icons{
+          
+          top: 40rem;
+          position: absolute;
+          padding:.7rem 6.5rem;
+          left: 14rem;
+          border-radius: 0;
+          margin-left: -.5rem;
+          margin-top: -.9rem;
+        }
+        .icons{
+          opacity: 1;
+        }
+        .icons::before{
+          opacity: 0;
+        }
+
+         
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <article>
+      <img src="/images/drawers.jpg" alt="">
+    </article>
+    <article>
+         <h2>Shift the overall look and feel by adding these wondrful touches to forniture in your home</h2>
+         <p>Ever been in a room and felt like samothing was missing?
+          perhaps it felt slightly bare and uninviting i've got some simple tipes to help you make any room feel complete.
+         </p>
+         <div class="content">
+          <img src="/images/avatar-michelle.jpg" alt="">
+          <div class="name">
+            <h4>Michelle Appleton</h4>
+            <span>20 jun 2020</span>
+          </div>
+          <div class="icon">
+            <img id="icon" src="/images/icon-share.svg" alt="">
+            
+          </div>
+          <div class="icons">
+              <div class="p">share</div>
+              
+              <img src="/images/icon-facebook.svg" alt="">
+              <img src="/images/icon-pinterest.svg" alt="">
+              <img src="/images/icon-twitter.svg" alt="">
+              <!-- <img class="icon" src="/images/icon-share.svg" alt=""> -->
+            </div>
+         </div>
+    </article>
+</div>
+ <script>
+  let icon = document.getElementById('icon')
+  let icons = document.querySelector('.icons')
+  icon.addEventListener('click',function(){
+    icons.classList.toggle('active')
+  })
+ </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
